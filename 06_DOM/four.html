@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Element - Remove</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <ul class="parent">
+        <li>JavaScript</li>
+    </ul>
+
+    <script>
+
+        // traverse all the previous lang not optimise
+        function addlang(langName) {
+            const li = document.createElement('li')
+            li.innerHTML = `${langName}`
+            document.querySelector('.parent').
+            appendChild(li)
+        }
+        addlang("Java")
+        addlang("Ruby")
+        addlang("TypeScript")
+        addlang("Python")
+
+        // optimize way
+        function addoptlang(langName) {
+            const li = document.createElement('li')
+            li.appendChild(document.createTextNode(langName))
+            document.querySelector('.parent').appendChild(li)
+        }
+        addoptlang("Mojo")
+
+        // Edit
+        const secondlang = document.querySelector("li:nth-child(2)")
+        // secondlang.innerHTML = "Mojo"
+        const newli = document.createElement('li')
+        newli.textContent = "CSS"
+        secondlang.replaceWith(newli)
+       
+        // Edit
+        const firstlang = document.querySelector('li:first-child')
+        firstlang.outerHTML = '<li> GoDaddy </li>'
+
+        // remove
+        const lastlang = document.querySelector('li:last-child')
+        lastlang.remove()
+
+    </script>
+</body>
+</html>
