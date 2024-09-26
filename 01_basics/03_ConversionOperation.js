@@ -54,7 +54,7 @@ let str3 = str1 + str2;
 // console.log("1" + 2 + 2); -> 122
 // console.log(1 + 3 + "2"); -> 42
 
-// If you want to know what is happend then check link
+// If you want to know what happend then check link
 // https://262.ecma-international.org/#sec-tonumber-applied-to-the-string-type
 
 // console.log(3 + 4 * 5 / 6)
