@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html events</title>
+</head>
+<body style="background-color: #212121; color: white;">
+    <h2>Amazing images</h2>
+    <ul id="images">
+        <li><img width="200px" id="Batman" src="the-batman-dc-darkness-4k-0o-1920x1080.jpg" alt="Batman"></li>
+        <li><img width="200px" id="anime" src="63775491-2k-anime-wallpaper.jpg" alt="anime"></li>
+        <li><img width="200px" id="flash" src="2018450.png" alt="flash"></li>
+        <li><img width="200px" id="pokemon" src="41625715-dark-gray-charizard-wallpaper-pokemon.jpg" alt="pokemon"></li>
+        <li><a href="https://google.com" id="google" style="text-decoration: none; color: white;">Google</a></li>
+    </ul>
+</body>
+<script>
+    // document.getElementById('flash').onclick = function() {
+    //     alert("flash clicked")
+    // }
+
+    // this thing use in earlier time 
+    // attachEvent()
+    // jQuery - on
+
+    // modern way
+    // document.getElementById('flash').addEventListener('click', function(e) { // e = events
+    //     console.log(e);
+    //     // alert('clicked again')
+    // }, false)
+
+    // read it yourself 
+    // type, timestamps defaultprevented
+    // target, toElement, srcElement, currentTarget
+    // client x, client y, screen x, screen y
+    // altkey, ctrlkey, shiftkey, keycode
+
+    // document.getElementById('images').addEventListener('click', function(e) {
+    //     console.log("clicked on parent one");
+    // }, false)
+    // document.getElementById('flash').addEventListener('click', function(e) {
+    //     console.log("clicked on flash");
+    //     e.stopPropagation()
+    // }, false)
+    
+    // document.getElementById('google').addEventListener('click', function(e) {
+    //     console.log("clicked");
+    //     e.preventDefault()
+    // })
+
+    document.querySelector('#images').addEventListener('click', function(e) {
+
+        console.log(e.target.tagName);
+        
+        if(e.target.tagName === 'IMG') {
+            // first way to remove
+            let removeit = e.target.parentNode;
+            removeit.remove()
+        }
+
+        // second way to remove
+        // removeit.parentNode.removeChild(removeit)
+    })
+</script>
+</html>
